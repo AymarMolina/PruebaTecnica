@@ -66,8 +66,8 @@ export default function Hero({ onOpenTerms }) {
           className="scroll-mt-24 rounded-xl bg-white p-5 shadow-2xl shadow-navy-900/20 ring-1 ring-slate-200 animate-fade-up [animation-delay:120ms] sm:p-6"
         >
           <div className="mb-5 text-center">
-            <h2 className="text-2xl font-bold text-slate-900">{t.form.title}</h2>
-            <p className="mt-1 text-sm font-medium text-palm-600">{t.form.subtitle}</p>
+            <h2 className="text-2xl font-bold text-slate-900">{t.form.title} </h2>
+            <p className="mt-1 text-sm font-medium text-palm-600">{t.form.subtitle} </p>
           </div>
           <LeadForm onOpenTerms={onOpenTerms} />
         </div>
