@@ -111,8 +111,8 @@ export default function Situations() {
                 <span className="sit-icon inline-flex">
                   <Icon className="size-12 text-navy-600 sm:size-16" />
                 </span>
-                <h3 className="mt-3 text-[15px] font-semibold leading-snug text-navy-700 sm:mt-4 sm:text-lg">{item.title}</h3>
-                <p className="mt-1.5 max-w-[15rem] text-[13px] leading-snug text-slate-800 sm:text-[15px]">{item.text}</p>
+                <h3 className="mt-3 text-[15px] font-semibold leading-snug text-navy-700 sm:mt-4 sm:text-lg">{item.title} </h3>
+                <p className="mt-1.5 max-w-[15rem] text-[13px] leading-snug text-slate-800 sm:text-[15px]">{item.text} </p>
               </li>
             )
           })}
