@@ -47,17 +47,15 @@ export default function TrustBar() {
     () => {
       const mm = gsap.matchMedia()
 
-      // Solo anima si el usuario no pidió "reducir movimiento" en su sistema
       mm.add('(prefers-reduced-motion: no-preference)', () => {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 85%', // arranca cuando la sección entra al 85% de la pantalla
-            once: true, // se anima una sola vez
+            start: 'top 85%', 
+            once: true,
           },
         })
 
-        // 1. Cada bloque sube y aparece, uno tras otro
         tl.from('.trust-item', {
           y: 24,
           autoAlpha: 0,
@@ -65,13 +63,11 @@ export default function TrustBar() {
           ease: 'power3.out',
           stagger: 0.12,
         })
-          // 2. Los íconos hacen un "pop" con rebote
           .from(
             '.trust-icon',
             { scale: 0, rotate: -20, duration: 0.5, ease: 'back.out(2)', stagger: 0.12 },
-            '<0.1', // empieza 0.1s después del paso anterior
+            '<0.1',
           )
-          // 3. Las estrellas se encienden una por una
           .from(
             '.trust-star',
             { scale: 0, autoAlpha: 0, duration: 0.3, ease: 'back.out(3)', stagger: 0.08 },
@@ -79,7 +75,6 @@ export default function TrustBar() {
           )
       })
 
-      // Hover: el ícono gira un poco al pasar el mouse sobre su bloque
       const cleanups = gsap.utils.toArray('.trust-item').map((item) => {
         const icon = item.querySelector('.trust-icon')
         if (!icon) return () => {}
@@ -95,7 +90,7 @@ export default function TrustBar() {
 
       return () => cleanups.forEach((fn) => fn())
     },
-    { scope: sectionRef }, // los selectores solo buscan dentro de esta sección
+    { scope: sectionRef }, 
   )
 
   return (

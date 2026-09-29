@@ -28,7 +28,7 @@
 }
 
 @layer base {
-  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
   body { @apply bg-white font-sans text-slate-700 antialiased; }
   h1, h2, h3, h4 { @apply text-navy-900; text-wrap: balance; }
 }
@@ -36,4 +36,25 @@
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-navy-800) var(--color-navy-50);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-navy-50);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-navy-700), var(--color-navy-900));
+  border-radius: 9999px;
+  border: 2px solid var(--color-navy-50);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-palm-600);
 }
